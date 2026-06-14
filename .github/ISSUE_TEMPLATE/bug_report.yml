@@ -1,0 +1,29 @@
+name: Bug Report
+description: Report a bug with NeuraBot
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting a bug! Please fill out the details below."
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      placeholder: "e.g. IK Engine, Vision AI, ESP32 Firmware"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: "e.g. Raspberry Pi 5, Jetson Nano"

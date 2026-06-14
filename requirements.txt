@@ -1,0 +1,46 @@
+# NeuraBot Python Requirements
+# Install with: pip install -r requirements.txt
+
+# Core
+numpy>=1.24.0
+PyYAML>=6.0
+pyserial>=3.5
+smbus2>=0.4.3
+RPi.GPIO>=0.7.1; platform_machine == "armv7l" or platform_machine == "aarch64"
+
+# Vision AI
+opencv-python>=4.8.0
+ultralytics>=8.0.0       # YOLOv8
+Pillow>=10.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Speech AI
+openai-whisper>=20231117  # Speech-to-text
+TTS>=0.22.0               # Coqui TTS (text-to-speech)
+pyaudio>=0.2.13
+sounddevice>=0.4.6
+soundfile>=0.12.1
+
+# Web control panel
+flask>=3.0.0
+flask-socketio>=5.3.6
+eventlet>=0.35.0
+
+# Power monitoring
+ina219>=0.4.2             # INA219 power sensor
+adafruit-circuitpython-ina219>=3.4.14
+
+# Display
+luma.oled>=3.13.0
+luma.lcd>=2.10.0
+Pillow>=10.0.0
+
+# Inverse Kinematics
+scipy>=1.11.0
+
+# Utilities
+loguru>=0.7.0
+python-dotenv>=1.0.0
+click>=8.1.0
+tqdm>=4.66.0

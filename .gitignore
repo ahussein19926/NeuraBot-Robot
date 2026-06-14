@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+env/
+.env
+
+# Config (keep example, ignore real config)
+config/config.yaml
+config/servo_trims.yaml
+*.secret.yaml
+
+# AI Models (too large for git — use download_models.py)
+*.pt
+*.pth
+*.onnx
+*.tflite
+tts_models/
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PlatformIO build
+firmware/**/.pio/
+firmware/**/build/
+
+# Large media
+docs/images/*.mp4
+docs/images/*.mov
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
