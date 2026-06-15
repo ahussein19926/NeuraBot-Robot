@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/images/neurabot_hero.png" alt="NeuraBot" width="100%"/>
+<img src="docs/images/neurabot_hero-1.png" alt="NeuraBot" width="100%"/>
 
 # 🐾 NeuraBot
 
