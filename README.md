@@ -167,8 +167,8 @@ NeuraBot/
 - [x] Basic servo control via ESP32 `v0.2`
 - [x] Inverse Kinematics engine `v0.3`
 - [x] Web control interface `v0.4`
-- [x] Vision AI — YOLOv8 integration `v0.5`
-- [x] Speech AI — Whisper + Coqui `v0.6`
+- [x] Vision AI — YOLOv5 integration `v0.5`
+- [x] Speech AI — Whisper + Google TTS `v0.6`
 - [x] Power management system `v0.7`
 - [ ] Autonomous navigation `v0.8`
 - [ ] SLAM mapping `v0.9`
