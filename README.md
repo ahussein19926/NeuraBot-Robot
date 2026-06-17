@@ -128,7 +128,7 @@ NeuraBot/
 | MCU | ESP32 DevKit v1 | 2 |
 | Servos | MG996R / DS3218MG (20 kg·cm) | 8 |
 | Battery | 2S LiPo, 7000mAh, 30C+ | 1 |
-| Camera | IMX477 / USB webcam | 1 |
+| Camera | 5MP Raspberry Pi Infrared Night Vision Camera Module with OV5647 sensor | 1 |
 | Microphone |  Generic USB Microphone | 1 |
 | Display | 2.4" I2C TFT (ST7789) | 1 |
 | Power sensor | INA219 I2C | 2 |
