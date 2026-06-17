@@ -141,7 +141,6 @@ NeuraBot/
 |-------|-------------|
 | [Build Guide](docs/build_guide/README.md) | Full 15-step assembly from printing to first boot |
 | [Wiring Guide](docs/wiring/README.md) | All wiring diagrams, pinouts, power architecture |
-| [Bill of Materials](hardware/bom/BOM.md) | Full parts list with estimated cost ($225–$400) |
 
 ---
 
