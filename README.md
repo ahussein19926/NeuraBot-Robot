@@ -64,21 +64,21 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 ┌──────────────────────────────────────────────────────────┐
 │               Raspberry Pi / Jetson                      │
 │                                                          │
-│   Vision AI (YOLOv8)      Speech AI (Whisper + TTS)     │
-│   IK Engine (50 Hz)       Web Panel (Flask + SocketIO)  │
-│   Power Monitor (INA219)  Comm Manager (UART)           │
+│   Vision AI (YOLOv5)      Speech AI (Whisper + TTS)      │
+│   IK Engine (50 Hz)       Web Panel                      │
+│                           Comm Manager (UART)            │
 └─────────────┬────────────────────────┬───────────────────┘
               │ UART 115200            │ UART / I2C / SPI
    ┌──────────▼──────────┐  ┌─────────▼───────────────┐
    │   ESP32 — Motion    │  │  ESP32 — Peripherals    │
-   │   12× servo control │  │  TFT · Mic · Speaker    │
-   │   JSON protocol     │  │  NeoPixel LEDs          │
+   │   8× servo control  │  │  TFT · Mic · Speaker    │
+   │   Serial protocol   │  │                         │
    └──────────┬──────────┘  └─────────────────────────┘
               │
    ┌──────────▼──────────────────────────────────────┐
-   │  Hardware Layer                                  │
-   │  3S LiPo (11.1V) · MG996R Servos · IMX477 Cam  │
-   │  INMP441 Mic · PETG/PLA+ Chassis · TPU Feet     │
+   │  Hardware Layer                                 │
+   │  2S LiPo (7.4V) · MG996R Servos · OV5647 Cam    │
+   │  USB Mic · PETG/PLA+ Chassis · TPU Feet     │
    └──────────────────────────────────────────────────┘
 ```
 
