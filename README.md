@@ -101,36 +101,12 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 
 ```
 NeuraBot/
-├── src/
-│   ├── ai/
-│   │   ├── vision/            # YOLOv8 vision module
-│   │   └── speech/            # Whisper STT + Coqui TTS
-│   ├── ik/                    # Inverse Kinematics engine
-│   ├── control/               # Gait controller + ESP32 comms
-│   ├── power/                 # INA219 power monitor
-│   └── web/                   # Flask + SocketIO web panel
-├── firmware/
-│   ├── esp32_motion/          # C++ servo firmware (PlatformIO)
-│   └── esp32_peripherals/     # Display, audio, LED firmware
-├── hardware/
-│   ├── 3d_models/             # STL / CAD files
-│   │   ├── body/
-│   │   ├── legs/
-│   │   ├── head/
-│   │   └── mounts/
-│   ├── pcb/                   # PCB schematics
-│   └── bom/                   # Bill of materials
+
 ├── docs/
 │   ├── build_guide/           # Step-by-step assembly guide
 │   ├── wiring/                # Wiring diagrams & pinouts
 │   └── images/                # Build photos & renders
-├── config/
-│   └── config.example.yaml    # Hardware configuration
-├── scripts/
-│   ├── calibrate_servos.py    # Interactive servo calibration
-│   └── download_models.py     # AI model downloader
-└── tests/
-    └── test_ik.py             # IK unit tests
+
 ```
 
 ---
