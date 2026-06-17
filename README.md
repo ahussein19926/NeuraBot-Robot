@@ -12,7 +12,6 @@
 [![Speech](https://img.shields.io/badge/Speech-Whisper%20%2B%20TTS-D4537E?style=flat-square&logo=openai&logoColor=white)](https://openai.com/whisper)
 [![IK](https://img.shields.io/badge/DOF-8%20Servos-378ADD?style=flat-square)](/)
 [![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square)](/)
-[![License](https://img.shields.io/badge/Repo-Private-red?style=flat-square)](/)
 
 ---
 
