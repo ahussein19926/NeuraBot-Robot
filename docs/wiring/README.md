@@ -2,9 +2,7 @@
 
 ## Power Architecture
 
-<img src="docs/wiring/Power Diagram.png" alt="NeuraBot" width="100%"/>
-
-## Raspberry Pi GPIO Pinout
+<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/5324d014-ef9d-4443-922f-73c6593b9405" />
 
 ```
 Pi GPIO Header (26-pin subset shown)
