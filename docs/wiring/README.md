@@ -2,7 +2,7 @@
 
 ## Power Architecture
 
-<img src="docs/images/Neurabot image.png" alt="NeuraBot" width="100%"/>
+<img src="docs/wiring/Power Diagram.png" alt="NeuraBot" width="100%"/>
 
 ## Raspberry Pi GPIO Pinout
 
