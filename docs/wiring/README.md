@@ -2,26 +2,8 @@
 
 ## Power Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     POWER DISTRIBUTION                          │
-│                                                                 │
-│  3S LiPo (11.1V)                                               │
-│       │                                                         │
-│   [Main Switch]                                                 │
-│       │                                                         │
-│   ┌───┴─────────────────────────┐                              │
-│   │                             │                              │
-│  [6V BEC]                  [5V Regulator]                      │
-│   │                             │                              │
-│  Servo Power Rail           Logic Power Rail                   │
-│  (12× Servos)               │           │                      │
-│                         [Rasp Pi]   [ESP32s]                   │
-│                         [Camera]    [Peripherals]              │
-└─────────────────────────────────────────────────────────────────┘
-```
 
----
+<img src="docs/images/Power diagram.png" alt="NeuraBot" width="100%"/>
 
 ## Raspberry Pi GPIO Pinout
 
