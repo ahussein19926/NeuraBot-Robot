@@ -22,7 +22,7 @@
 
 ## 1. Overview & Safety
 
-NeuraBot is a 12-DOF quadruped robot. **Read this guide fully before starting.**
+NeuraBot is a 8-DOF quadruped robot. **Read this guide fully before starting.**
 
 ⚠️ **Safety warnings:**
 - LiPo batteries can cause fire if shorted, overcharged, or punctured. Always use a proper LiPo charger.
