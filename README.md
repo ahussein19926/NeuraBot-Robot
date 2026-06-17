@@ -24,16 +24,16 @@
 
 ## What is NeuraBot?
 
-NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using a real-time inverse kinematics engine, sees with YOLOv8, listens and speaks with Whisper + Coqui TTS, and can be controlled live from any browser. Everything — from the 3D-printed chassis to the dual ESP32 firmware — is built from scratch.
+NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using a real-time inverse kinematics engine, sees with YOLOv5, listens and speaks with Whisper + Google TTS, and can be controlled live from any browser. Everything — from the 3D-printed chassis to the dual ESP32 firmware — is built from scratch.
 
 | | |
 |---|---|
-| 🦾 **12-DOF locomotion** | 3 joints per leg × 4 legs, driven by MG996R/DS3218 servos |
-| 👁️ **Vision AI** | YOLOv8n real-time object detection at 15 fps |
-| 🎙️ **Speech AI** | Whisper STT + Coqui TTS, wake word "Neura" |
-| ⚡ **Smart power system** | Dual INA219 rail monitoring, SOC estimation, low-voltage cutoff |
-| 🌐 **Web control panel** | Live camera feed, D-pad, gait controls via browser |
-| 📺 **Onboard display** | SPI TFT face/status screen + I2S mic + speaker |
+| 🦾 **8-DOF locomotion** | 2 joints per leg × 4 legs, driven by MG996R/DS3218 servos |
+| 👁️ **Vision AI** | YOLOv5 real-time object detection at 15 fps |
+| 🎙️ **Speech AI** | Whisper STT + Google TTS, wake word "NeuraBot" |
+| ⚡ **Smart power system** | Dual INA219 rail monitoring, low-voltage cutoff |
+| 🌐 **Web control panel** | Master Controller, gait controls via browser |
+| 📺 **Onboard display** | I2C TFT face/status screen + USB mic + speaker |
 
 ---
 
@@ -49,7 +49,7 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 |------|-------|-------------|
 | 1 | ![](docs/images/build_3dparts.jpg) | 3D printed parts — body, legs, head, mounts |
 | 2 | ![](docs/images/build_chassis.jpg) | Body frame & leg assembly |
-| 3 | ![](docs/images/build_servos.jpg) | 12× servo installation (3 per leg) |
+| 3 | ![](docs/images/build_servos.jpg) | 8× servo installation (2 per leg) |
 | 4 | ![](docs/images/build_electronics.jpg) | Raspberry Pi & dual ESP32 mounting |
 | 5 | ![](docs/images/build_power.jpg) | Power distribution & LiPo bay wiring |
 | 6 | ![](docs/images/build_head.jpg) | Head assembly — display, camera & mic |
@@ -89,42 +89,12 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 
 | Module | Description |
 |--------|-------------|
-| 🔺 **Inverse Kinematics** | Geometric 3-DOF solver per leg. Trot, walk, sit, shake at 50 Hz |
-| 👁️ **Vision AI** | YOLOv8n real-time detection with annotated web stream |
-| 🎙️ **Speech AI** | Whisper STT + Coqui TTS with full voice command routing |
-| ⚡ **Power System** | Dual INA219 monitoring, SOC estimation, low-voltage cutoff |
-| 🌐 **Web Control** | SocketIO browser panel — D-pad, gaits, live camera, telemetry |
-| 🔌 **Peripheral Bus** | TFT display · I2S mic array · MAX98357 amp · WS2812B LEDs |
-
----
-
-## Quick Start
-
-```bash
-# 1. Clone
-git clone https://github.com/YOUR_USERNAME/NeuraBot.git
-cd NeuraBot
-
-# 2. Install Python dependencies
-pip install -r requirements.txt
-
-# 3. Flash ESP32 firmware
-cd firmware/esp32_motion && pio run --target upload
-cd ../esp32_peripherals && pio run --target upload
-
-# 4. Configure
-cp config/config.example.yaml config/config.yaml
-
-# 5. Download AI models
-python scripts/download_models.py
-
-# 6. Calibrate servos
-python scripts/calibrate_servos.py
-
-# 7. Launch
-python src/main.py
-# Web panel: http://<robot-ip>:5000
-```
+| 🔺 **Inverse Kinematics** | Geometric 2-DOF solver per leg. Trot, walk, sit, shake at 50 Hz |
+| 👁️ **Vision AI** | YOLOv5 real-time detection with annotated web stream |
+| 🎙️ **Speech AI** | Whisper STT + Google TTS with full voice command routing |
+| ⚡ **Power System** | Dual INA219 monitoring, low-voltage cutoff |
+| 🌐 **Web Control** | Client-Server model enables browser panel — D-pad, gaits, live camera, telemetry |
+| 🔌 **Peripheral Bus** | TFT display · USB mic array · MAX98357 amp · WS2812B LEDs |
 
 ---
 
@@ -180,15 +150,15 @@ NeuraBot/
 
 | Component | Spec | Qty |
 |-----------|------|-----|
-| SBC | Raspberry Pi 5 / Jetson Nano | 1 |
+| SBC | Raspberry Pi 5 | 1 |
 | MCU | ESP32 DevKit v1 | 2 |
-| Servos | MG996R / DS3218MG (20 kg·cm) | 12 |
-| Battery | 3S LiPo, 5000mAh, 30C+ | 1 |
+| Servos | MG996R / DS3218MG (20 kg·cm) | 8 |
+| Battery | 2S LiPo, 7000mAh, 30C+ | 1 |
 | Camera | IMX477 / USB webcam | 1 |
-| Microphone | INMP441 I2S MEMS | 1 |
-| Display | 2.4" SPI TFT (ST7789) | 1 |
+| Microphone |  Generic USB Microphone | 1 |
+| Display | 2.4" I2C TFT (ST7789) | 1 |
 | Power sensor | INA219 I2C | 2 |
-| Filament | PETG (structural), PLA+ (covers), TPU (feet) | — |
+| Filament | PLA+
 
 ---
 
