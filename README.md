@@ -6,7 +6,7 @@
 
 **AI-Powered Quadruped Robot Dog**
 
-[![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%20%2F%20Jetson-8A2BE2?style=flat-square&logo=raspberry-pi&logoColor=white)](https://www.raspberrypi.com)
+[![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi-8A2BE2?style=flat-square&logo=raspberry-pi&logoColor=white)](https://www.raspberrypi.com)
 [![MCU](https://img.shields.io/badge/MCU-Dual%20ESP32-1D9E75?style=flat-square&logo=espressif&logoColor=white)](https://www.espressif.com)
 [![Vision](https://img.shields.io/badge/Vision%20AI-YOLOv8-EF9F27?style=flat-square&logo=opencv&logoColor=white)](https://ultralytics.com)
 [![Speech](https://img.shields.io/badge/Speech-Whisper%20%2B%20TTS-D4537E?style=flat-square&logo=openai&logoColor=white)](https://openai.com/whisper)
