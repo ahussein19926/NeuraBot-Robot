@@ -141,7 +141,7 @@ LiPo Battery (3S)
 
 1. Mount Raspberry Pi (or Jetson) in the SBC tray.
 2. Connect camera to CSI ribbon connector (or USB port for USB camera).
-3. Connect INA219 sensors to I2C bus (GPIO 2=SDA, 3=SCL, 3.3V, GND).
+3. Connect INA219 sensors to I2C bus
 4. Connect USB to Serial adapters or UART wires for ESP32 communication.
 
 ---
