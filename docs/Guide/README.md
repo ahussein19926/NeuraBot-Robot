@@ -144,34 +144,14 @@ LiPo Battery (3S)
 3. Connect INA219 sensors to I2C bus (GPIO 2=SDA, 3=SCL, 3.3V, GND).
 4. Connect USB to Serial adapters or UART wires for ESP32 communication.
 
-**Raspberry Pi GPIO Map:**
-
-| GPIO | Function |
-|------|----------|
-| 2 (SDA) | I2C data (INA219, display) |
-| 3 (SCL) | I2C clock |
-| 14 (TX) | UART to ESP32 Motion (RX) |
-| 15 (RX) | UART from ESP32 Motion (TX) |
-| USB | USB-to-Serial for Peripheral ESP32 |
-
 ---
 
 ## 9. ESP32 Wiring
 
-### Motion ESP32
-See [firmware/esp32_motion/README.md](../../firmware/esp32_motion/README.md) for full pinout.
-
-- Connect 12 servo signal wires to ESP32 GPIO pins per the pinout table.
+- Connect 8x servo signal wires to ESP32 GPIO pins per the pinout table.
 - Power all servo + lines to 7.4V BEC rail.
 - Power all servo − lines to GND bus.
 - ESP32 powered from 5V logic rail via VIN pin.
-- UART wires: ESP32 GPIO16 (RX) → Pi TX, ESP32 GPIO17 (TX) → Pi RX.
-
-### Peripheral ESP32
-- SPI to display (CLK, MOSI, CS, DC, RST).
-- I2S to microphone (SCK, WS, SD).
-- I2S to amplifier/speaker (BCLK, LRC, DIN).
-- WS2812B data line to LED strip.
 
 ---
 
