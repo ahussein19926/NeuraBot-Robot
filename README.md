@@ -95,7 +95,7 @@ NeuraBot/
 | Guide | Description |
 |-------|-------------|
 | [Build Guide](docs/build_guide/README.md) | Full 9-step assembly from printing to first boot |
-| [Wiring Guide](docs/wiring/README.md) | All wiring diagrams, pinouts, power architecture |
+| [Power Architecture](docs/Power Architecture/README.md) | All wiring diagrams, pinouts, power architecture |
 
 ---
 
