@@ -83,8 +83,8 @@ NeuraBot/
 
 ├── docs/
 │   ├── Guide/           # Step-by-step assembly guide
-│   ├── Architecture/   # Wiring diagrams & pinouts
-│   └── Miscellaneous/          # Build photos & renders
+│   ├── Architecture/    # Wiring diagrams & pinouts
+│   └── Miscellaneous/   # Build photos & renders
 
 ```
 
