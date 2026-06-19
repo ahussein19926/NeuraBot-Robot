@@ -32,7 +32,7 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 | 🎙️ **Speech AI** | Whisper STT + Google TTS, wake word "NeuraBot" |
 | ⚡ **Smart power system** | Dual INA219 rail monitoring, low-voltage cutoff |
 | 🌐 **Web control panel** | Master Controller, gait controls via browser |
-| 📺 **Onboard display** | I2C TFT face/status screen + USB mic + speaker |
+| 📺 **Onboard display** | I2C LCD face/status screen + USB mic + speaker |
 
 ---
 
@@ -72,7 +72,7 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 | 🎙️ **Speech AI** | Whisper STT + Google TTS with full voice command routing |
 | ⚡ **Power System** | Dual INA219 monitoring, low-voltage cutoff |
 | 🌐 **Web Control** | Client-Server model enables browser panel — D-pad, gaits, live camera, telemetry |
-| 🔌 **Peripheral Bus** | TFT display · USB mic array · MAX98357 amp · WS2812B LEDs |
+| 🔌 **Peripheral Bus** | LCD display · USB mic array · MAX98357 amp · WS2812B LEDs |
 
 ---
 
@@ -109,7 +109,7 @@ NeuraBot/
 | Battery | 2S LiPo, 7000mAh, 30C+ | 1 |
 | Camera | 5MP Raspberry Pi Infrared Night Vision Camera Module with OV5647 sensor | 1 |
 | Microphone |  Generic USB Microphone | 1 |
-| Display | 2.4" I2C TFT (ST7789) | 1 |
+| Display | 0.96" 128x64 I2C LCD Screen | 1 |
 | Power sensor | INA219 I2C | 2 |
 | Filament | PLA+
 
