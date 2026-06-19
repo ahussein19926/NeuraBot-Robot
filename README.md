@@ -82,9 +82,9 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 NeuraBot/
 
 ├── docs/
-│   ├── build_guide/           # Step-by-step assembly guide
-│   ├── wiring/                # Wiring diagrams & pinouts
-│   └── images/                # Build photos & renders
+│   ├── Guide/           # Step-by-step assembly guide
+│   ├── Architecture/   # Wiring diagrams & pinouts
+│   └── Miscellaneous/          # Build photos & renders
 
 ```
 
