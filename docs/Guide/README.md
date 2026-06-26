@@ -1,5 +1,7 @@
 # NeuraBot — Full Build Guide
 
+<img src="docs/Miscellaneous/Neurabot image 2.png" alt="NeuraBot" width="100%"/>
+
 ## Table of Contents
 
 1. [Overview & Safety](#1-overview--safety)
