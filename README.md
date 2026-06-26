@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/Miscellaneous/Neurabot image 1.jpg" alt="NeuraBot" width="100%"/>
+<img src="docs/Miscellaneous/Neurabot image.png" alt="NeuraBot" width="100%"/>
 
 # 🐾 NeuraBot
 
@@ -40,7 +40,7 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 
 ### Full Unit
 
-> 📸 Replace with your photo: `docs/images/neurabot_hero.jpg`
+<img src="docs/Miscellaneous/Neurabot image 1.jpg" alt="NeuraBot" width="100%"/>
 
 ### Build Process
 
