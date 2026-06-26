@@ -39,23 +39,6 @@ See [BOM.md](../bom/BOM.md) for the full parts list.
 
 ---
 
-## 3. 3D Printing Parts
-
-All STL files are in `/hardware/3d_models/`.
-
-| File | Qty | Material | Notes |
-|------|-----|----------|-------|
-| `body/body_main.stl` | 1 | PETG or PLA+ | Main chassis |
-| `body/body_top_cover.stl` | 1 | PLA+ | Electronics cover |
-| `legs/hip_bracket.stl` | 4 | PETG | Hip mount |
-| `legs/thigh_link.stl` | 4 | PETG | Upper leg |
-| `legs/shin_link.stl` | 4 | PETG | Lower leg |
-| `legs/foot_pad.stl` | 4 | TPU 95A | Rubber-like foot pad |
-| `head/head_shell.stl` | 1 | PLA+ | Head enclosure |
-| `head/camera_mount.stl` | 1 | PLA+ | Camera bracket |
-| `mounts/sbc_tray.stl` | 1 | PLA+ | SBC mounting tray |
-| `mounts/battery_sled.stl` | 1 | PETG | Battery holder |
-
 **Print settings:**
 - Layer height: 0.2mm
 - Infill: 40% (structural parts), 20% (covers)
