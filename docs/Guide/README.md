@@ -1,3 +1,7 @@
+<div align="center">
+
+
+
 # NeuraBot — Full Build Guide
 
 ## Table of Contents
