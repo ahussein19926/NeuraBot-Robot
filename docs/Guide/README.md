@@ -29,8 +29,6 @@ NeuraBot is a 8-DOF quadruped robot. **Read this guide fully before starting.**
 
 ## 2. Tools & Materials
 
-See [BOM.md](../bom/BOM.md) for the full parts list.
-
 **Required tools:**
 - 3D printer (PLA+ or PETG recommended)
 - Soldering iron + solder
