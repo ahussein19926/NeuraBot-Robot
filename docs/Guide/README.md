@@ -1,6 +1,6 @@
 # NeuraBot — Full Build Guide
 
-<img src="docs/Miscellaneous/Guide/NeuraBot Project - V1.png" alt="NeuraBot" width="100%"/>
+<img src="docs/Guide/NeuraBot Project - V1.png" alt="NeuraBot" width="100%"/>
 
 ## Table of Contents
 
