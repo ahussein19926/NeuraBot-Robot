@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 <img src="docs/Miscellaneous/NeuraBotProject-V1.png" alt="NeuraBot" width="100%"/>
 
