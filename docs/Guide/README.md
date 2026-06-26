@@ -1,5 +1,9 @@
 # NeuraBot — Full Build Guide
 
+##
+<img src=docs/Guide/NeuraBotProject-V1.png alt="NeuraBot" width="100%"/>
+
+
 ## Table of Contents
 
 1. [Overview & Safety](#1-overview--safety)
@@ -11,8 +15,6 @@
 7. [Power System Wiring](#7-power-system-wiring)
 8. [Electronics & SBC](#8-electronics--sbc)
 9. [ESP32 Wiring](#9-esp32-wiring)
-
-<img src=docs/Guide/NeuraBotProject-V1.png alt="NeuraBot" width="100%"/>
 
 ---
 
