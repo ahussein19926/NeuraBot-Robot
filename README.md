@@ -44,17 +44,17 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 
 ### Build Process
 
-| Step | Photo | Description |
-|------|-------|-------------|
-| 1 | ![](docs/images/build_3dparts.jpg) | 3D printed parts — body, legs, head, mounts |
-| 2 | ![](docs/images/build_chassis.jpg) | Body frame & leg assembly |
-| 3 | ![](docs/images/build_servos.jpg) | 8× servo installation (2 per leg) |
-| 4 | ![](docs/images/build_electronics.jpg) | Raspberry Pi & dual ESP32 mounting |
-| 5 | ![](docs/images/build_power.jpg) | Power distribution & LiPo bay wiring |
-| 6 | ![](docs/images/build_head.jpg) | Head assembly — display, camera & mic |
-| 7 | ![](docs/images/build_wiring.jpg) | Full cable routing & harness |
-| 8 | ![](docs/images/build_gait_test.jpg) | First walk — IK gait test |
-| 9 | ![](docs/images/build_final.jpg) | Fully assembled NeuraBot |
+| Step | Description |
+|------|-----------|
+| 1 | 3D printed parts — body, legs, head, mounts |
+| 2 | Body frame & leg assembly |
+| 3 | 8× servo installation (2 per leg) |
+| 4 | Raspberry Pi & dual ESP32 mounting |
+| 5 | Power distribution & LiPo bay wiring |
+| 6 | Head assembly — display, camera & mic |
+| 7 | Full cable routing & harness |
+| 8 | First walk — IK gait test |
+| 9 | Fully assembled NeuraBot |
 
 ---
 
