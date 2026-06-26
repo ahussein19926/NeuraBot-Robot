@@ -39,7 +39,7 @@ NeuraBot is a fully custom-built AI-powered quadruped robot dog. It walks using 
 ## Gallery
 
 ### Full Unit 
-To view 3D model, Click Here: [NeuraBot 3D Model]("docs/Miscellaneous/NeuraBotProject-FullBody.stl")
+To view 3D model, Click Here: [NeuraBot 3D Model]("/docs/Miscellaneous/NeuraBotProject-FullBody.stl")
 
 <img src="docs/Miscellaneous/Neurabot image 1.jpg" alt="NeuraBot" width="100%"/>
 
