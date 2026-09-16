@@ -167,7 +167,8 @@ NeuraBot includes a browser-based control interface, streamlined to a single foc
 
 <div align="center">
 
-**[🕹️ Open the Live Interactive Demo →](https://claude.ai/artifact/HR4XYciM7qzo5DZoajj6ZH)**
+**[🕹️ Open the Live Interactive Demo →](docs/Architecture/page.html)**
+**
 
 *Drag the joystick, pick a gait, and adjust the master controller to see live servo angle readouts — fully interactive, right in your browser.*
 
