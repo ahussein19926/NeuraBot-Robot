@@ -12,7 +12,6 @@
 [![Vision](https://img.shields.io/badge/Vision-YOLOv5-EF9F27?style=flat-square)](https://ultralytics.com)
 [![Speech](https://img.shields.io/badge/Speech-Whisper%20%2B%20TTS-D4537E?style=flat-square&logo=openai&logoColor=white)](https://openai.com/whisper)
 [![Locomotion](https://img.shields.io/badge/Locomotion-8--DOF-378ADD?style=flat-square)](/)
-[![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square)](/)
 
 <br>
 
