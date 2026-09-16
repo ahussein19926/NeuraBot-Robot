@@ -51,7 +51,7 @@ NeuraBot is a 8-DOF quadruped robot. **Read this guide fully before starting.**
 
 ## 4. Servo Preparation
 
-1. Unbox all 12 servos.
+1. Unbox all 8 servos.
 2. Center each servo by connecting to 5V + signal = 1.5ms PWM pulse, or use a servo tester.
 3. Mount 25T servo horns at the neutral (centered) position.
 4. Label servos FL_HIP, FL_THIGH, FL_KNEE ... RR_KNEE with masking tape.
@@ -63,16 +63,16 @@ NeuraBot is a 8-DOF quadruped robot. **Read this guide fully before starting.**
 Repeat for all 4 legs (FL, FR, RL, RR).
 
 **Step 5.1 — Hip**
-1. Insert HIP servo into `hip_bracket.stl`, secure with M2×8 screws.
+1. Insert HIP servo into `hip_bracket`, secure with M2×8 screws.
 2. Attach hip bracket to body mounting points with M3×12 screws.
 
 **Step 5.2 — Thigh**
-1. Mount THIGH servo into `thigh_link.stl`.
+1. Mount THIGH servo into `thigh_link`.
 2. Connect thigh link to hip servo horn — use the provided M3 screw + washer.
 3. Route servo cable back through the hip bracket cable channel.
 
 **Step 5.3 — Shin & Foot**
-1. Mount KNEE servo into the lower portion of `thigh_link.stl`.
+1. Mount KNEE servo into the lower portion of `thigh_link`.
 2. Connect `shin_link.stl` to knee servo horn.
 3. Press-fit or glue `foot_pad.stl` (TPU) to the bottom of the shin link.
 
