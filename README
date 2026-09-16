@@ -3,12 +3,9 @@
 <img src="docs/Miscellaneous/Neurabot image 5.png" alt="NeuraBot" width="100%"/>
 
 # 🐾 NeuraBot
-
-### **AI-Enabled 8-DOF Quadruped Robotics Platform**
+### AI-Enabled 8-DOF Quadruped Robotics Platform
 
 **Mechanical Design · Embedded Systems · Robotics · Computer Vision · Speech AI · Power Management · Human–Robot Interaction**
-
-<br>
 
 [![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%205-8A2BE2?style=flat-square&logo=raspberry-pi&logoColor=white)](https://www.raspberrypi.com)
 [![MCU](https://img.shields.io/badge/MCU-Dual%20ESP32-1D9E75?style=flat-square&logo=espressif&logoColor=white)](https://www.espressif.com)
@@ -17,26 +14,30 @@
 [![Locomotion](https://img.shields.io/badge/Locomotion-8--DOF-378ADD?style=flat-square)](/)
 [![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square)](/)
 
+<br>
+
+[Overview](#overview) • [Architecture](#-engineering-architecture) • [AI](#-artificial-intelligence) • [Hardware](#-hardware-configuration) • [Build](#-build-process) • [Roadmap](#-development-status)
+
 </div>
 
----
+<br>
 
-# Overview
+## Overview
 
-**NeuraBot is a custom-built quadruped robotics platform integrating mechanical design, embedded control, real-time inverse kinematics, artificial intelligence, human–robot interaction, browser-based control, and intelligent power monitoring into a single robotic system.**
+**NeuraBot is a custom-built quadruped robotics platform** integrating mechanical design, embedded control, real-time inverse kinematics, artificial intelligence, human–robot interaction, browser-based control, and intelligent power monitoring into a single robotic system.
 
 The platform is built around a **Raspberry Pi 5 + dual ESP32 architecture**, combining high-level computation and AI processing with distributed embedded control of the robot's physical systems.
 
-Every major subsystem — from the **3D-printed mechanical structure and servo-driven locomotion** to the **AI perception, speech interface, web control and power monitoring** — forms part of one integrated engineering platform.
+Every major subsystem — from the **3D-printed mechanical structure and servo-driven locomotion** to the **AI perception, speech interface, web control, and power monitoring** — forms part of one integrated engineering platform.
 
-> **NeuraBot is developed as an engineering platform and technical design portfolio, with emphasis on system integration, robotics architecture and practical implementation.**
+> 💡 NeuraBot is developed as an engineering platform and technical design portfolio, with emphasis on system integration, robotics architecture, and practical implementation.
 
----
+<br>
 
-# System at a Glance
+## 📋 System at a Glance
 
 | Subsystem | Implementation |
-|---|---|
+|:---|:---|
 | 🦾 **Locomotion** | 8-DOF quadruped · 2 actuated joints per leg |
 | 🧠 **Main Computer** | Raspberry Pi 5 |
 | ⚙️ **Embedded Control** | Dual ESP32 controllers |
@@ -45,186 +46,141 @@ Every major subsystem — from the **3D-printed mechanical structure and servo-d
 | 🎙️ **Speech Interface** | Whisper STT + Google TTS |
 | 🌐 **Robot Interface** | Browser-based control and telemetry |
 | ⚡ **Power System** | Dual INA219 rail monitoring + low-voltage cutoff |
-| 📺 **Human–Robot Interface** | LCD display, microphone, speaker and LEDs |
+| 📺 **Human–Robot Interface** | LCD display, microphone, speaker, and LEDs |
 | 🔋 **Battery** | 2S 7000mAh LiPo |
 
----
+<br>
 
-# Engineering Architecture
+## 🏗️ Engineering Architecture
 
 <img src="docs/Miscellaneous/Block Diagram-5.png" alt="NeuraBot System Architecture" width="100%"/>
 
 NeuraBot uses a distributed architecture that separates **high-level computation and AI processing** from **real-time embedded hardware control**.
 
-```text
-                         ┌──────────────────────────┐
-                         │       Raspberry Pi 5     │
-                         │                          │
-                         │  Vision AI               │
-                         │  Speech AI               │
-                         │  Inverse Kinematics      │
-                         │  Web Control             │
-                         │  System Management       │
-                         └────────────┬─────────────┘
-                                      │
-                                 UART / Serial
-                                      │
-                    ┌─────────────────┴─────────────────┐
-                    │                                   │
-           ┌────────▼────────┐                 ┌────────▼────────┐
-           │     ESP32 #1    │                 │     ESP32 #2    │
-           │                 │                 │                 │
-           │ Motion Control  │                 │ Peripherals     │
-           │ Servo Control   │                 │ Display         │
-           │                 │                 │ Audio / LEDs    │
-           └────────┬────────┘                 └─────────────────┘
-                    │
-             ┌──────┴──────┐
-             │             │
-        Servo Control   Locomotion
-             │
-       ┌─────┴─────┐
-       │  8 Servos │
-       │ 4 × Legs  │
-       └───────────┘
+```mermaid
+flowchart TD
+    classDef brain fill:#8A2BE2,color:#fff,stroke:#5c1e99,stroke-width:2px
+    classDef mcu fill:#1D9E75,color:#fff,stroke:#146b50,stroke-width:2px
+    classDef phys fill:#378ADD,color:#fff,stroke:#255e9c,stroke-width:2px
+
+    subgraph L1["PERCEPTION & INTELLIGENCE"]
+        direction TB
+        PI(["Raspberry Pi 5<br/>━━━━━━━━━━<br/>Vision AI · Speech AI<br/>Inverse Kinematics<br/>Web Control · System Mgmt"]):::brain
+    end
+
+    subgraph L2["CONTROL & ACTUATION"]
+        direction LR
+        ESP1(["ESP32 #1<br/>━━━━━━━━━━<br/>Motion Control<br/>Servo Control"]):::mcu
+        ESP2(["ESP32 #2<br/>━━━━━━━━━━<br/>Peripherals · Display<br/>Audio / LEDs"]):::mcu
+    end
+
+    subgraph L3["PHYSICAL SYSTEM"]
+        direction TB
+        SERVOS(["8 × Servos<br/>4 × Legs"]):::phys
+    end
+
+    PI == "UART / Serial" ==> ESP1
+    PI -. "UART / Serial" .-> ESP2
+    ESP1 ==> SERVOS
+
+    style L1 fill:#f5eefc,stroke:#8A2BE2,stroke-width:1px,color:#4a1a70
+    style L2 fill:#eafbf5,stroke:#1D9E75,stroke-width:1px,color:#0f5c40
+    style L3 fill:#eaf3fc,stroke:#378ADD,stroke-width:1px,color:#1c4a75
 ```
 
-This architecture provides a clear separation between:
+This architecture provides a clear separation of responsibilities:
 
-**Perception & Intelligence**
+| Layer | Component |
+|:---|:---|
+| **Perception & Intelligence** | Raspberry Pi |
+| **Control & Actuation** | ESP32 |
+| **Physical System** | Servos + mechanical structure |
 
-→ Raspberry Pi
+<br>
 
-**Control & Actuation**
+## 🦿 Locomotion & Robotics
 
-→ ESP32
+### 8-DOF Quadruped
 
-**Physical System**
+NeuraBot uses **two actuated joints per leg across four legs**, resulting in an 8-DOF locomotion system. The architecture is intentionally compact, providing a practical balance between:
 
-→ Servos + mechanical structure
+- Mechanical complexity
+- Actuator count
+- Control complexity
+- Computational requirements
+- Physical size
 
----
+**Documented locomotion behaviors:** Stand · Walk · Trot · Sit · Shake
 
-# Locomotion & Robotics
+### Real-Time Inverse Kinematics
 
-## 8-DOF Quadruped
+The locomotion system uses a **geometric 2-DOF inverse kinematics solver for each leg**, operating at **50 Hz**.
 
-NeuraBot uses **two actuated joints per leg across four legs**, resulting in an 8-DOF locomotion system.
+```mermaid
+flowchart TD
+    classDef input fill:#EF9F27,color:#fff,stroke:#a8690c,stroke-width:2px
+    classDef compute fill:#378ADD,color:#fff,stroke:#255e9c,stroke-width:2px
+    classDef output fill:#1D9E75,color:#fff,stroke:#146b50,stroke-width:2px
+    classDef hw fill:#8A2BE2,color:#fff,stroke:#5c1e99,stroke-width:2px
 
-The architecture is intentionally compact, providing a practical balance between:
+    A(["Motion Command"]):::input --> B(["Desired Foot Position"]):::input
+    B --> C{{"IK Solver<br/>2-DOF per Leg · 50 Hz"}}:::compute
+    C --> D(["Joint Positions"]):::output
+    D --> E(["Servo Commands"]):::output
+    E --> F(["ESP32"]):::hw
+    F --> G(["8 × Servos"]):::hw
 
-- mechanical complexity
-- actuator count
-- control complexity
-- computational requirements
-- physical size
-
-The robot's documented locomotion behaviors include:
-
-- Stand
-- Walk
-- Trot
-- Sit
-- Shake
-
----
-
-## Real-Time Inverse Kinematics
-
-The locomotion system uses a **geometric 2-DOF inverse kinematics solver for each leg**.
-
-The documented IK engine operates at **50 Hz**.
-
-```text
-          Motion Command
-                │
-                ▼
-        Desired Foot Position
-                │
-                ▼
-       ┌─────────────────┐
-       │   IK Solver     │
-       │    2-DOF/Leg    │
-       └────────┬────────┘
-                │
-                ▼
-         Joint Positions
-                │
-                ▼
-          Servo Commands
-                │
-                ▼
-             ESP32
-                │
-                ▼
-           8 × Servos
+    linkStyle default stroke-width:2px
 ```
 
 This forms the core robotics layer responsible for converting high-level movement requirements into leg joint positions.
 
----
+<br>
 
-# Artificial Intelligence
+## 🤖 Artificial Intelligence
 
-## 👁️ Computer Vision
+### 👁️ Computer Vision
 
 NeuraBot integrates **YOLOv5** for real-time object detection.
 
-The documented vision system provides:
-
 - Real-time object detection
-- Approximately 15 FPS operation
+- ~15 FPS operation
 - Annotated camera output
 - Integration with the browser-based robot interface
 
-The camera subsystem uses a **5MP Raspberry Pi infrared night-vision camera with an OV5647 sensor**.
+Camera hardware: **5MP Raspberry Pi infrared night-vision camera (OV5647 sensor)**.
 
----
+### 🎙️ Speech Interaction
 
-## 🎙️ Speech Interaction
+| Function | Technology |
+|:---|:---|
+| Speech-to-text | Whisper |
+| Text-to-speech | Google TTS |
 
-The speech subsystem combines:
+The system includes voice-command routing and the wake word **"NeuraBot"**, providing a human–robot interaction layer above the robot's physical control system.
 
-**Whisper**
+<br>
 
-→ Speech-to-text
+## 🌐 Web Control
 
-**Google TTS**
+NeuraBot includes a browser-based control interface designed as a centralized operator dashboard.
 
-→ Text-to-speech
-
-The system also includes voice-command routing and the wake word:
-
-> **"NeuraBot"**
-
-This provides a human–robot interaction layer above the robot's physical control system.
-
----
-
-# Web Control
-
-NeuraBot includes a browser-based control interface designed to provide a centralized operator interface.
-
-The documented interface includes:
-
-### Robot Control
+**Robot Control**
 - Directional control
 - Gait selection
 - Master controller
 
-### Visualization
+**Visualization**
 - Live camera stream
 - Robot telemetry
 
 The browser interface allows the robot to be operated without requiring direct physical interaction with the embedded controllers.
 
----
+<br>
 
-# Power Management
+## ⚡ Power Management
 
 Power management is treated as a dedicated subsystem within the robot architecture.
-
-The documented system includes:
 
 - **2S 7000mAh LiPo battery**
 - **Dual INA219 monitoring**
@@ -233,99 +189,82 @@ The documented system includes:
 
 The power architecture provides monitoring and protection functionality while separating the robot's power and control requirements.
 
-Detailed electrical documentation is available in:
+📄 Detailed electrical documentation: **[Power Architecture](docs/Architecture/README.md)**
 
-**[Power Architecture](docs/Architecture/README.md)**
+<br>
 
----
-
-# Peripheral & Interaction Layer
+## 🎛️ Peripheral & Interaction Layer
 
 NeuraBot incorporates several peripherals to provide system feedback and human interaction.
 
 | Device | Function |
-|---|---|
-| **0.96" 128×64 I2C LCD** | Face / system status |
-| **USB Microphone** | Audio input |
-| **MAX98357 amplifier** | Audio output |
-| **WS2812B LEDs** | Visual indication |
-| **OV5647 Camera** | Vision and live streaming |
+|:---|:---|
+| 0.96" 128×64 I2C LCD | Face / system status |
+| USB Microphone | Audio input |
+| MAX98357 amplifier | Audio output |
+| WS2812B LEDs | Visual indication |
+| OV5647 Camera | Vision and live streaming |
 
 These peripherals extend the platform beyond locomotion and provide the foundation for a more interactive robotic system.
 
----
+<br>
 
-# Mechanical Engineering
+## 🔧 Mechanical Engineering
 
-NeuraBot's physical platform is custom designed and fabricated using **3D-printed components**.
+NeuraBot's physical platform is custom designed and fabricated using **3D-printed components**, covering:
 
-The mechanical development covers:
-
-- Main body
-- Quadruped legs
-- Head assembly
-- Servo mounts
-- Electronics mounts
-- Battery compartment
-- Camera mounting
-- Cable routing
-- Electrical harness
+Main body · Quadruped legs · Head assembly · Servo mounts · Electronics mounts · Battery compartment · Camera mounting · Cable routing · Electrical harness
 
 The design process progresses from individual printed components to a fully integrated robotic platform.
 
----
+**3D Model:** [View / Download NeuraBot Full-Body Model](docs/Miscellaneous/NeuraBotProject-FullBody.stl)
 
-# 3D Model
+<br>
 
-**Full NeuraBot body model:**
-
-[**View / Download NeuraBot 3D Model**](docs/Miscellaneous/NeuraBotProject-FullBody.stl)
-
----
-
-# Build Process
+## 🛠️ Build Process
 
 | Stage | Engineering Activity |
-|---:|---|
-| **01** | 3D-printed body, legs, head and mounts |
-| **02** | Body frame and leg assembly |
-| **03** | Installation of 8 servo actuators |
-| **04** | Raspberry Pi and dual ESP32 integration |
-| **05** | Power distribution and LiPo bay wiring |
-| **06** | Head assembly — display, camera and microphone |
-| **07** | Cable routing and electrical harness |
-| **08** | Initial IK and gait testing |
-| **09** | Fully integrated NeuraBot |
+|:---:|:---|
+| 01 | 3D-printed body, legs, head, and mounts |
+| 02 | Body frame and leg assembly |
+| 03 | Installation of 8 servo actuators |
+| 04 | Raspberry Pi and dual ESP32 integration |
+| 05 | Power distribution and LiPo bay wiring |
+| 06 | Head assembly — display, camera, and microphone |
+| 07 | Cable routing and electrical harness |
+| 08 | Initial IK and gait testing |
+| 09 | Fully integrated NeuraBot |
 
-For detailed assembly instructions, see the **[Build Guide](docs/Guide/README.md)**.
+📄 For detailed assembly instructions, see the **[Build Guide](docs/Guide/README.md)**.
 
----
+<br>
 
-# Gallery
+## 📸 Gallery
 
-## Full Unit
-
+<div align="center">
 <img src="docs/Miscellaneous/Neurabot image 1.png" alt="NeuraBot Full Unit" width="100%"/>
+<br><em>Full Unit</em>
+</div>
 
----
+<br>
 
-# Hardware Configuration
+## 🔩 Hardware Configuration
 
 | Component | Specification | Qty |
-|---|---|---:|
-| **Single-Board Computer** | Raspberry Pi 5 | 1 |
-| **Microcontroller** | ESP32 DevKit v1 | 2 |
-| **Servo Actuators** | MG996R / DS3218MG — 20 kg·cm | 8 |
-| **Battery** | 2S LiPo — 7000mAh — 30C+ | 1 |
-| **Camera** | 5MP Raspberry Pi Infrared Night Vision Camera — OV5647 | 1 |
-| **Microphone** | Generic USB Microphone | 1 |
-| **Display** | 0.96" 128×64 I2C LCD | 1 |
-| **Power Monitoring** | INA219 I2C | 2 |
-| **Structural Material** | PLA+ | — |
+|:---|:---|---:|
+| Single-Board Computer | Raspberry Pi 5 | 1 |
+| Microcontroller | ESP32 DevKit v1 | 2 |
+| Servo Actuators | MG996R / DS3218MG — 20 kg·cm | 8 |
+| Battery | 2S LiPo — 7000mAh — 30C+ | 1 |
+| Camera | 5MP Raspberry Pi Infrared Night Vision — OV5647 | 1 |
+| Microphone | Generic USB Microphone | 1 |
+| Display | 0.96" 128×64 I2C LCD | 1 |
+| Power Monitoring | INA219 I2C | 2 |
+| Structural Material | PLA+ | — |
 
----
+<br>
 
-# Repository Structure
+## 📁 Repository Structure
 
 ```text
 NeuraBot/
@@ -346,26 +285,24 @@ NeuraBot/
 └── README.md
 ```
 
-The repository currently focuses on **engineering documentation, system architecture, mechanical development, assembly and design evidence**.
+The repository currently focuses on **engineering documentation, system architecture, mechanical development, assembly, and design evidence**.
 
----
+<br>
 
-# Technical Documentation
+## 📚 Technical Documentation
 
 | Documentation | Purpose |
-|---|---|
-| **[Build Guide](docs/Guide/README.md)** | Step-by-step mechanical and system assembly |
-| **[Power Architecture](docs/Architecture/README.md)** | Electrical power architecture and documentation |
-| **[3D Model](docs/Miscellaneous/NeuraBotProject-FullBody.stl)** | Full-body 3D model |
+|:---|:---|
+| [Build Guide](docs/Guide/README.md) | Step-by-step mechanical and system assembly |
+| [Power Architecture](docs/Architecture/README.md) | Electrical power architecture and documentation |
+| [3D Model](docs/Miscellaneous/NeuraBotProject-FullBody.stl) | Full-body 3D model |
 
----
+<br>
 
-# Development Status
-
-### Current Development
+## 📊 Development Status
 
 | Version | Development Stage | Status |
-|---|---|:---:|
+|:---|:---|:---:|
 | `v0.1` | Mechanical design & 3D printing | ✅ |
 | `v0.2` | Basic ESP32 servo control | ✅ |
 | `v0.3` | Inverse Kinematics engine | ✅ |
@@ -378,110 +315,92 @@ The repository currently focuses on **engineering documentation, system architec
 | `v1.0` | Emotion expression system | ⬜ |
 | `v1.1` | ROS2 integration | ⬜ |
 
----
+<br>
 
-# Engineering Roadmap
+## 🗺️ Engineering Roadmap
 
-The future development direction is focused on increasing the autonomy and robotics capabilities of the platform.
+Future development is focused on increasing the autonomy and robotics capabilities of the platform.
 
-### Navigation
+| Direction | Description |
+|:---|:---|
+| **Navigation** | Autonomous movement and navigation capabilities |
+| **Mapping** | SLAM-based environmental mapping |
+| **Interaction** | Expanded expressive and human–robot interaction capabilities |
+| **Robotics Middleware** | Future integration with **ROS2** to support a broader robotics software ecosystem |
 
-Autonomous movement and navigation capabilities.
+<br>
 
-### Mapping
-
-SLAM-based environmental mapping.
-
-### Interaction
-
-Expanded expressive and human–robot interaction capabilities.
-
-### Robotics Middleware
-
-Future integration with **ROS2** to support a broader robotics software ecosystem.
-
----
-
-# Engineering Focus
+## 🎯 Engineering Focus
 
 NeuraBot brings together multiple engineering disciplines into one integrated platform:
 
-```text
-        MECHANICAL DESIGN
-               │
-               ▼
-       ELECTRICAL SYSTEMS
-               │
-               ▼
-      EMBEDDED CONTROL
-               │
-               ▼
-     ROBOTICS / KINEMATICS
-               │
-               ▼
-       AI PERCEPTION
-               │
-               ▼
-    HUMAN–ROBOT INTERACTION
-               │
-               ▼
-        SYSTEM INTEGRATION
+```mermaid
+flowchart TD
+    classDef foundation fill:#378ADD,color:#fff,stroke:#255e9c,stroke-width:2px
+    classDef brains fill:#EF9F27,color:#fff,stroke:#a8690c,stroke-width:2px
+    classDef integrate fill:#8A2BE2,color:#fff,stroke:#5c1e99,stroke-width:2px
+
+    subgraph G1["FOUNDATION"]
+        direction TB
+        A(["Mechanical Design"]):::foundation
+        B(["Electrical Systems"]):::foundation
+        C(["Embedded Control"]):::foundation
+        A --> B --> C
+    end
+
+    subgraph G2["INTELLIGENCE"]
+        direction TB
+        D(["Robotics / Kinematics"]):::brains
+        E(["AI Perception"]):::brains
+        F(["Human–Robot Interaction"]):::brains
+        D --> E --> F
+    end
+
+    subgraph G3["OUTCOME"]
+        direction TB
+        Gn(["System Integration"]):::integrate
+    end
+
+    C ==> D
+    F ==> Gn
+
+    style G1 fill:#eaf3fc,stroke:#378ADD,stroke-width:1px,color:#1c4a75
+    style G2 fill:#fdf3e4,stroke:#EF9F27,stroke-width:1px,color:#7a4c0f
+    style G3 fill:#f5eefc,stroke:#8A2BE2,stroke-width:1px,color:#4a1a70
 ```
 
-The project demonstrates the development of a robotic system from **physical design and fabrication through embedded control, robotics algorithms, AI integration and operator interaction**.
+The project demonstrates the development of a robotic system from **physical design and fabrication through embedded control, robotics algorithms, AI integration, and operator interaction**.
 
----
+<br>
 
-# Project Philosophy
+## 💭 Project Philosophy
 
-NeuraBot is built around a simple engineering principle:
+> **Integrate the physical, computational, and intelligent layers of a robot into one coherent system.**
 
-> **Integrate the physical, computational and intelligent layers of a robot into one coherent system.**
+The project treats the robot not as a collection of independent components, but as a complete engineering system in which:
 
-The project therefore treats the robot not as a collection of independent components, but as a complete engineering system in which:
+| Layer | Role |
+|:---|:---|
+| **Mechanical Design** | Provides the physical platform |
+| **Embedded Control** | Drives the actuators |
+| **Robotics Algorithms** | Generate movement |
+| **AI** | Provides perception and interaction |
+| **Power Management** | Monitors the electrical system |
+| **Web Interface** | Connects the operator to the robot |
 
-**Mechanical Design**
+<br>
 
-→ provides the physical platform
+## 🟠 Status: In Development
 
-**Embedded Control**
+NeuraBot remains an evolving robotics platform. The current repository documents the project's **mechanical design, hardware architecture, system integration, control capabilities, AI subsystems, and development roadmap**.
 
-→ drives the actuators
+Future development will expand the platform toward greater autonomy, environmental mapping, expressive interaction, and robotics middleware integration.
 
-**Robotics Algorithms**
-
-→ generate movement
-
-**AI**
-
-→ provides perception and interaction
-
-**Power Management**
-
-→ monitors the electrical system
-
-**Web Interface**
-
-→ connects the operator to the robot
-
----
-
-# Status
-
-🟠 **In Development**
-
-NeuraBot remains an evolving robotics platform.
-
-The current repository documents the project's **mechanical design, hardware architecture, system integration, control capabilities, AI subsystems and development roadmap**.
-
-Future development will expand the platform toward greater autonomy, environmental mapping, expressive interaction and robotics middleware integration.
-
----
+<br>
 
 <div align="center">
 
 ### 🐾 NeuraBot
-
 **Custom Robotics Engineering Platform**
 
 *Mechanical Design · Embedded Systems · Robotics · AI · Systems Integration*
