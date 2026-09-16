@@ -28,7 +28,7 @@
 
 The platform is built around a **Raspberry Pi 5 + dual ESP32 architecture**, combining high-level computation and AI processing with distributed embedded control of the robot's physical systems.
 
-Every major subsystem — from the **3D-printed mechanical structure and servo-driven locomotion** to the **AI perception, speech interface, web control, and power monitoring** — forms part of one integrated engineering platform.
+Every major subsystem - from the **3D-printed mechanical structure and servo-driven locomotion** to the **AI perception, speech interface, web control, and power monitoring** - forms part of one integrated engineering platform.
 
 > 💡 NeuraBot is developed as an engineering platform and technical design portfolio, with emphasis on system integration, robotics architecture, and practical implementation.
 
@@ -230,7 +230,7 @@ The design process progresses from individual printed components to a fully inte
 | 03 | Installation of 8 servo actuators |
 | 04 | Raspberry Pi and dual ESP32 integration |
 | 05 | Power distribution and LiPo bay wiring |
-| 06 | Head assembly — display, camera, and microphone |
+| 06 | Head assembly - display, camera, and microphone |
 | 07 | Cable routing and electrical harness |
 | 08 | Initial IK and gait testing |
 | 09 | Fully integrated NeuraBot |
@@ -254,13 +254,13 @@ The design process progresses from individual printed components to a fully inte
 |:---|:---|---:|
 | Single-Board Computer | Raspberry Pi 5 | 1 |
 | Microcontroller | ESP32 DevKit v1 | 2 |
-| Servo Actuators | MG996R / DS3218MG — 20 kg·cm | 8 |
-| Battery | 2S LiPo — 7000mAh — 30C+ | 1 |
-| Camera | 5MP Raspberry Pi Infrared Night Vision — OV5647 | 1 |
+| Servo Actuators | MG996R / DS3218MG - 20 kg·cm | 8 |
+| Battery | 2S LiPo - 7000mAh - 30C+ | 1 |
+| Camera | 5MP Raspberry Pi Infrared Night Vision - OV5647 | 1 |
 | Microphone | Generic USB Microphone | 1 |
 | Display | 0.96" 128×64 I2C LCD | 1 |
 | Power Monitoring | INA219 I2C | 2 |
-| Structural Material | PLA+ | — |
+| Structural Material | PLA+ | - |
 
 <br>
 
@@ -307,8 +307,8 @@ The repository currently focuses on **engineering documentation, system architec
 | `v0.2` | Basic ESP32 servo control | ✅ |
 | `v0.3` | Inverse Kinematics engine | ✅ |
 | `v0.4` | Web control interface | ✅ |
-| `v0.5` | Vision AI — YOLOv5 | ✅ |
-| `v0.6` | Speech AI — Whisper + Google TTS | ✅ |
+| `v0.5` | Vision AI - YOLOv5 | ✅ |
+| `v0.6` | Speech AI - Whisper + Google TTS | ✅ |
 | `v0.7` | Power management system | ✅ |
 | `v0.8` | Autonomous navigation | ⬜ |
 | `v0.9` | SLAM mapping | ⬜ |
