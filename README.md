@@ -16,7 +16,7 @@
 
 <br>
 
-[Overview](#overview) • [Architecture](#-engineering-architecture) • [AI](#-artificial-intelligence) • [Hardware](#-hardware-configuration) • [Build](#-build-process) • [Roadmap](#-development-status)
+[Overview](#overview) • [Architecture](#-engineering-architecture) • [AI](#-artificial-intelligence) • [Hardware](#-hardware-configuration) • [Build](#-build-process)
 
 </div>
 
@@ -30,28 +30,28 @@ The platform is built around a **Raspberry Pi 5 + dual ESP32 architecture**, com
 
 Every major subsystem — from the **3D-printed mechanical structure and servo-driven locomotion** to the **AI perception, speech interface, web control, and power monitoring** — forms part of one integrated engineering platform.
 
-> 💡 NeuraBot is developed as an engineering platform and technical design portfolio, with emphasis on system integration, robotics architecture, and practical implementation.
+> NeuraBot is developed as an engineering platform and technical design portfolio, with emphasis on system integration, robotics architecture, and practical implementation.
 
 <br>
 
-## 📋 System at a Glance
+## System at a Glance
 
 | Subsystem | Implementation |
 |:---|:---|
-| 🦾 **Locomotion** | 8-DOF quadruped · 2 actuated joints per leg |
-| 🧠 **Main Computer** | Raspberry Pi 5 |
-| ⚙️ **Embedded Control** | Dual ESP32 controllers |
-| 📐 **Robotics** | Real-time geometric inverse kinematics |
-| 👁️ **Computer Vision** | YOLOv5 real-time object detection |
-| 🎙️ **Speech Interface** | Whisper STT + Google TTS |
-| 🌐 **Robot Interface** | Browser-based control and telemetry |
-| ⚡ **Power System** | Dual INA219 rail monitoring + low-voltage cutoff |
-| 📺 **Human–Robot Interface** | LCD display, microphone, speaker, and LEDs |
-| 🔋 **Battery** | 2S 7000mAh LiPo |
+| **Locomotion** | 8-DOF quadruped · 2 actuated joints per leg |
+| **Main Computer** | Raspberry Pi 5 |
+| **Embedded Control** | Dual ESP32 controllers |
+| **Robotics** | Real-time geometric inverse kinematics |
+| **Computer Vision** | YOLOv5 real-time object detection |
+| **Speech Interface** | Whisper STT + Google TTS |
+| **Robot Interface** | Browser-based control and telemetry |
+| **Power System** | Dual INA219 rail monitoring + low-voltage cutoff |
+| **Human–Robot Interface** | LCD display, microphone, speaker, and LEDs |
+| **Battery** | 2S 7000mAh LiPo |
 
 <br>
 
-## 🏗️ Engineering Architecture
+## Engineering Architecture
 
 <img src="docs/Miscellaneous/Block Diagram-5.png" alt="NeuraBot System Architecture" width="100%"/>
 
@@ -137,9 +137,9 @@ This forms the core robotics layer responsible for converting high-level movemen
 
 <br>
 
-## 🤖 Artificial Intelligence
+## Artificial Intelligence
 
-### 👁️ Computer Vision
+### Computer Vision
 
 NeuraBot integrates **YOLOv5** for real-time object detection.
 
@@ -150,7 +150,7 @@ NeuraBot integrates **YOLOv5** for real-time object detection.
 
 Camera hardware: **5MP Raspberry Pi infrared night-vision camera (OV5647 sensor)**.
 
-### 🎙️ Speech Interaction
+### Speech Interaction
 
 | Function | Technology |
 |:---|:---|
@@ -161,14 +161,13 @@ The system includes voice-command routing and the wake word **"NeuraBot"**, prov
 
 <br>
 
-## 🌐 Webpage Control
+## Webpage Control
 
 NeuraBot includes a browser-based control interface, streamlined to a single focused **Control** view.
 
 <div align="left">
 
-**[🕹️ Open the Live Interactive Demo →](docs/Architecture/page.html)**
-**
+**[Open the Live Interactive Demo](docs/Architecture/page.html)**
 
 *Drag the joystick, pick a gait, and adjust the master controller to see live servo angle readouts — fully interactive, right in your browser.*
 
@@ -182,11 +181,9 @@ NeuraBot includes a browser-based control interface, streamlined to a single foc
 
 The browser interface allows the robot to be operated without requiring direct physical interaction with the embedded controllers.
 
-> ℹ️ GitHub's README renderer sanitizes embedded scripts and stylesheets, so the interface can't run inline on this page — the link above opens the fully functional version.
-
 <br>
 
-## ⚡ Power Management
+## Power Management
 
 Power management is treated as a dedicated subsystem within the robot architecture.
 
@@ -201,7 +198,7 @@ The power architecture provides monitoring and protection functionality while se
 
 <br>
 
-## 🎛️ Peripheral & Interaction Layer
+## Peripheral & Interaction Layer
 
 NeuraBot incorporates several peripherals to provide system feedback and human interaction.
 
@@ -217,7 +214,7 @@ These peripherals extend the platform beyond locomotion and provide the foundati
 
 <br>
 
-## 🔧 Mechanical Engineering
+## Mechanical Engineering
 
 NeuraBot's physical platform is custom designed and fabricated using **3D-printed components**, covering:
 
@@ -229,7 +226,7 @@ The design process progresses from individual printed components to a fully inte
 
 <br>
 
-## 🛠️ Build Process
+## Build Process
 
 | Stage | Engineering Activity |
 |:---:|:---|
@@ -247,7 +244,7 @@ The design process progresses from individual printed components to a fully inte
 
 <br>
 
-## 📸 Gallery
+## Gallery
 
 <div align="center">
 <img src="docs/Miscellaneous/Neurabot image 1.png" alt="NeuraBot Full Unit" width="100%"/>
@@ -256,7 +253,7 @@ The design process progresses from individual printed components to a fully inte
 
 <br>
 
-## 🔩 Hardware Configuration
+## Hardware Configuration
 
 | Component | Specification | Qty |
 |:---|:---|---:|
@@ -272,7 +269,7 @@ The design process progresses from individual printed components to a fully inte
 
 <br>
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 NeuraBot/
@@ -297,7 +294,7 @@ The repository currently focuses on **engineering documentation, system architec
 
 <br>
 
-## 📚 Technical Documentation
+## Technical Documentation
 
 | Documentation | Purpose |
 |:---|:---|
@@ -307,7 +304,7 @@ The repository currently focuses on **engineering documentation, system architec
 
 <br>
 
-## 📊 Development Status
+## Development Status
 
 | Version | Development Stage | Status |
 |:---|:---|:---:|
@@ -325,7 +322,7 @@ The repository currently focuses on **engineering documentation, system architec
 
 <br>
 
-## 🗺️ Engineering Roadmap
+## Engineering Roadmap
 
 Future development is focused on increasing the autonomy and robotics capabilities of the platform.
 
@@ -338,7 +335,7 @@ Future development is focused on increasing the autonomy and robotics capabiliti
 
 <br>
 
-## 🎯 Engineering Focus
+## Engineering Focus
 
 NeuraBot brings together multiple engineering disciplines into one integrated platform:
 
@@ -381,7 +378,7 @@ The project demonstrates the development of a robotic system from **physical des
 
 <br>
 
-## 💭 Project Philosophy
+## Project Philosophy
 
 > **Integrate the physical, computational, and intelligent layers of a robot into one coherent system.**
 
@@ -397,8 +394,6 @@ The project treats the robot not as a collection of independent components, but 
 | **Web Interface** | Connects the operator to the robot |
 
 <br>
-
-## 🟠 Status: In Development
 
 NeuraBot remains an evolving robotics platform. The current repository documents the project's **mechanical design, hardware architecture, system integration, control capabilities, AI subsystems, and development roadmap**.
 
