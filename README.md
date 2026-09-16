@@ -165,7 +165,7 @@ The system includes voice-command routing and the wake word **"NeuraBot"**, prov
 
 NeuraBot includes a browser-based control interface, streamlined to a single focused **Control** view.
 
-<div align="center">
+<div align="left">
 
 **[🕹️ Open the Live Interactive Demo →](docs/Architecture/page.html)**
 **
